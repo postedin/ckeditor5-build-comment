@@ -13,23 +13,24 @@ import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
 import Link from '@ckeditor/ckeditor5-link/src/link';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
+import Code from '@ckeditor/ckeditor5-basic-styles/src/code';
 
-export default class ClassicEditor extends ClassicEditorBase {}
+export default class CommentEditor extends ClassicEditorBase {
+  constructor(...args) {
+    super(...args);
+
+    this.on('ready', () => {
+      this.ui.view.top.remove(0);
+    });
+  }
+}
 
 // Plugins to include in the build.
-ClassicEditor.builtinPlugins = [
-  Essentials,
-  Autoformat,
-  Bold,
-  Italic,
-  BlockQuote,
-  Link,
-  Paragraph,
-];
+CommentEditor.builtinPlugins = [Essentials, Autoformat, Bold, Italic, BlockQuote, Link, Paragraph, Code];
 
 // Editor configuration.
-ClassicEditor.defaultConfig = {
+CommentEditor.defaultConfig = {
   toolbar: false,
   // This value must be kept in sync with the language defined in webpack.config.js.
-  language: 'en'
+  language: 'en',
 };
