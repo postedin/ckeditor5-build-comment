@@ -1,3 +1,6 @@
+
+# FORKED README ALONE, NEED TO UPDATE FOR COMMENT BUILD
+
 CKEditor 5 classic editor build
 ========================================
 
