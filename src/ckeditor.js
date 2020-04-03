@@ -14,6 +14,7 @@ import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
 import Link from '@ckeditor/ckeditor5-link/src/link';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import Code from '@ckeditor/ckeditor5-basic-styles/src/code';
+import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 
 export default class CommentEditor extends ClassicEditorBase {
   constructor(...args) {
@@ -26,7 +27,9 @@ export default class CommentEditor extends ClassicEditorBase {
 }
 
 // Plugins to include in the build.
-CommentEditor.builtinPlugins = [Essentials, Autoformat, Bold, Italic, BlockQuote, Link, Paragraph, Code];
+CommentEditor.builtinPlugins = [
+    Essentials, Autoformat, Bold, Italic, BlockQuote, Link, Paragraph, Code, TextTransformation,
+];
 
 // Editor configuration.
 CommentEditor.defaultConfig = {
